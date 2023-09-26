@@ -2,7 +2,9 @@ package ru.netology.javaqa.javaqamvn.stats;
 
 public class StatsService {
 
+
     public int totalSales(int[] sales) {
+
         int total = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -12,11 +14,12 @@ public class StatsService {
     }
 
     public int meanPriceSales(int[] sales) {
-        int total = 0;
+
+        int total = totalSales(sales);
         int month = 0;
         int average;
+
         for (int i = 0; i < sales.length; i++) {
-            total = total + sales[i];
             month = month + 1;
         }
         return average = total / month;
@@ -24,7 +27,9 @@ public class StatsService {
 
     }
 
+
     public int minSales(int[] sales) {
+
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -38,7 +43,9 @@ public class StatsService {
 
 
     public int maxSales(int[] sales) {
+
         int maxMonth = 0;
+
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[maxMonth]) {
                 maxMonth = i;
@@ -49,14 +56,8 @@ public class StatsService {
     }
 
     public int higherMeanPriceSales(int[] sales) {
-        int total = 0;
-        int month = 0;
-        int average;
-        for (int i = 0; i < sales.length; i++) {
-            total = total + sales[i];
-            month = month + 1;
-        }
-        average = total / month;
+
+        int average = meanPriceSales(sales);
         int higherMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -66,19 +67,11 @@ public class StatsService {
         }
 
         return higherMonth;
-
-
     }
 
     public int belowMeanPriceSales(int[] sales) {
-        int total = 0;
-        int month = 0;
-        int average;
-        for (int i = 0; i < sales.length; i++) {
-            total = total + sales[i];
-            month = month + 1;
-        }
-        average = total / month;
+
+        int average = meanPriceSales(sales);
         int belowMonth = 0;
 
         for (int i = 0; i < sales.length; i++) {
